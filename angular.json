@@ -1,0 +1,196 @@
+{
+  "version": 1,
+  "projects": {
+    "bookclub": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "apps/bookclub",
+      "sourceRoot": "apps/bookclub/src",
+      "prefix": "bookorg",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/bookclub",
+            "index": "apps/bookclub/src/index.html",
+            "main": "apps/bookclub/src/main.ts",
+            "polyfills": "apps/bookclub/src/polyfills.ts",
+            "tsConfig": "apps/bookclub/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/bookclub/src/favicon.ico",
+              "apps/bookclub/src/assets"
+            ],
+            "styles": ["apps/bookclub/src/styles.css"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/bookclub/src/environments/environment.ts",
+                  "with": "apps/bookclub/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "bookclub:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "bookclub:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "bookclub:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/bookclub/tsconfig.app.json",
+              "apps/bookclub/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/bookclub/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/bookclub/jest.config.js",
+            "tsConfig": "apps/bookclub/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "apps/bookclub/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "bookclub-e2e": {
+      "root": "apps/bookclub-e2e",
+      "sourceRoot": "apps/bookclub-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/bookclub-e2e/cypress.json",
+            "tsConfig": "apps/bookclub-e2e/tsconfig.e2e.json",
+            "devServerTarget": "bookclub:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "bookclub:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["apps/bookclub-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/bookclub-e2e/**/*"]
+          }
+        }
+      }
+    },
+    "ui": {
+      "projectType": "library",
+      "root": "libs/ui",
+      "sourceRoot": "libs/ui/src",
+      "prefix": "bookorg",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ui/tsconfig.lib.json",
+              "libs/ui/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/ui/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ui/jest.config.js",
+            "tsConfig": "libs/ui/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/ui/src/test-setup.ts"
+          }
+        },
+        "storybook": {
+          "builder": "@nrwl/storybook:storybook",
+          "options": {
+            "uiFramework": "@storybook/angular",
+            "port": 4400,
+            "config": {
+              "configFolder": "libs/ui/.storybook"
+            },
+            "staticDir": ["./libs/ui/src"]
+          },
+          "configurations": {
+            "ci": {
+              "quiet": true
+            }
+          }
+        },
+        "build-storybook": {
+          "builder": "@nrwl/storybook:build",
+          "options": {
+            "uiFramework": "@storybook/angular",
+            "outputPath": "dist/storybook/ui",
+            "config": {
+              "configFolder": "libs/ui/.storybook"
+            }
+          },
+          "configurations": {
+            "ci": {
+              "quiet": true
+            }
+          }
+        }
+      },
+      "schematics": {}
+    }
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/angular"
+  },
+  "schematics": {
+    "@nrwl/angular:application": {
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "unitTestRunner": "jest"
+    }
+  },
+  "defaultProject": "bookclub"
+}

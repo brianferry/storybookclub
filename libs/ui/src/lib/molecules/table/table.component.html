@@ -1,0 +1,13 @@
+<ag-grid-angular
+    #agGrid
+    class="ag-theme-alpine"
+    [modules]="modules"
+    [rowData]="rowData"
+    [columnDefs]="columnDefs"
+    [defaultColDef]="defaultColDef"
+    [getRowHeight]="getRowHeight"
+    (firstDataRendered)="onFirstDataRendered($event)"
+    (gridSizeChanged)="onGridSizeChanged($event)"
+    (gridReady)="onGridReady($event)"
+>
+</ag-grid-angular>
