@@ -16,6 +16,8 @@ import { TableComponent } from './molecules/table/table.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { CardComponent } from './molecules/card/card.component';
 import { ImageComponent } from './atoms/image/image.component';
+import { HeaderComponent } from './organisms/header/header.component';
+import { LinkComponent } from './atoms/link/link.component';
 
 @NgModule({
   imports: [
@@ -27,7 +29,7 @@ import { ImageComponent } from './atoms/image/image.component';
     StoreModule.forFeature(fromUi.UI_FEATURE_KEY, fromUi.reducer),
     EffectsModule.forFeature([UiEffects]),
   ],
-  declarations: [LabelComponent, InputTextComponent, PieChartComponent, TableComponent, CardComponent, ImageComponent],
-  exports: [LabelComponent, InputTextComponent, PieChartComponent, TableComponent, CardComponent, ImageComponent],
+  declarations: [LabelComponent, InputTextComponent, PieChartComponent, TableComponent, CardComponent, ImageComponent, HeaderComponent, LinkComponent],
+  exports: [LabelComponent, InputTextComponent, PieChartComponent, TableComponent, CardComponent, ImageComponent, HeaderComponent, LinkComponent],
 })
 export class UiModule {}

@@ -10,7 +10,7 @@ import { UiEffects } from '../../+state/ui/ui.effects';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 
-storiesOf('molecules/Pie Chart', module)
+storiesOf('M O L E C U L E S|Pie Chart', module)
 .addDecorator( 
     moduleMetadata({
         imports: [

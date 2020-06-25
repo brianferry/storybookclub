@@ -2,7 +2,7 @@ import { text, withKnobs } from '@storybook/addon-knobs';
 import { LabelComponent } from './label.component';
 
 export default {
-  title: 'atoms/label',
+  title: 'A T O M S|label',
   decorators: [withKnobs]
 }
 

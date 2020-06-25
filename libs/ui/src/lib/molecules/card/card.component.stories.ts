@@ -6,7 +6,7 @@ import { UiModule } from '../../ui.module';
 import { CommonModule } from '@angular/common';
 import { ImageComponent } from '../../atoms/image/image.component';
 
-storiesOf('molecules/card', module)
+storiesOf('M O L E C U L E S|card', module)
 .addDecorator( 
     moduleMetadata({
         imports: [

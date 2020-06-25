@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-storiesOf('molecules/Table', module)
+storiesOf('M O L E C U L E S|Table', module)
 .addDecorator( 
     moduleMetadata({
         imports: [
