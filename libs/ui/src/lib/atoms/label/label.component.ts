@@ -8,7 +8,7 @@ import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 })
 export class LabelComponent implements OnInit {
 
-  @Input() text: string = "Text Content!";
+  @Input() linkClass: string = "";
 
   constructor() { }
 

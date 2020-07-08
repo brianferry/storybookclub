@@ -3,7 +3,7 @@ import { ImageComponent } from './image.component';
 import { withKnobs, text, number, boolean } from '@storybook/addon-knobs';
 import { UiModule } from '@bookorg/ui';
 
-storiesOf('A T O M S|image', module)
+storiesOf('Atoms|image', module)
 .addDecorator( 
     moduleMetadata({
         declarations: [ImageComponent]

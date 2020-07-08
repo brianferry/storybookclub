@@ -1,0 +1,28 @@
+{
+    "data": [
+      {
+        "name": "Altissia",
+        "value": 10
+      },
+      {
+        "name": "Terra",
+        "value": 20
+      },
+      {
+        "name": "Zanarkand",
+        "value": 30
+      },
+        {
+        "name": "Midgar",
+        "value": 20
+      }
+    ],
+    "colorScheme": {
+      "domain": [
+          "#101"
+          ,"#C55"
+          ,"#C0FFEE"
+          ,"#bada55"
+      ]
+    }
+  }

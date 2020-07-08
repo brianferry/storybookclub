@@ -8,17 +8,17 @@
         *ngIf="cardImgEnabled && cardImg && cardImg.length > 0"    
     >
     </bookorg-image>
-    <div class="card-header" *ngIf="!cardImgEnabled || !cardImg || cardImg.length <= 0">
+    <div *ngIf="!cardImgEnabled || !cardImg || cardImg.length <= 0">
         <h3 class="card-title">
-            <input-label [text]="cardTitle"></input-label>
+            <input-label>{{cardTitle}}</input-label>
         </h3>
     </div>
     <div class="card-body">
         <h3 class="card-title" *ngIf="cardImgEnabled && cardImg && cardImg.length > 0">
-            <input-label [text]="cardTitle"></input-label>
+            <input-label>{{cardTitle}}</input-label>
         </h3>
         <p>
-            <input-label [text]="cardBody"></input-label>
+            <ng-content></ng-content>
         </p>
     </div>
   </div>

@@ -2,7 +2,7 @@ import { text, withKnobs } from '@storybook/addon-knobs';
 import { LinkComponent } from './link.component';
 import { storiesOf, moduleMetadata } from '@storybook/angular';
 
-storiesOf('A T O M S|link', module)
+storiesOf('Atoms|link', module)
 .addDecorator( 
     moduleMetadata({
         declarations: [LinkComponent]

@@ -46,6 +46,7 @@
     "@ngxs/logger-plugin": "^3.6.2",
     "@ngxs/store": "^3.6.2",
     "@nrwl/angular": "9.4.5",
+    "@storybook/addon-a11y": "^5.3.19",
     "@swimlane/ngx-charts": "^14.0.0",
     "ag-grid-angular": "^23.2.1",
     "ag-grid-community": "^23.2.1",

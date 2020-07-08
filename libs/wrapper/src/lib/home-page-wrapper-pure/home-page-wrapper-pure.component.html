@@ -1,0 +1,56 @@
+<body class="antialiased body-class">
+    <div class="page">
+      <bo-Header [NavItems]="NavBar" [User]="User"></bo-Header>
+  
+      <div class="content">
+        <div class="container-xl">
+          <boPageTitle [title]="Title">
+          </boPageTitle>
+          <div class="row row-deck row-cards">
+            <div class="col-sm-12">
+              <div class="col-sm-4 offset-4">
+                <boNowReading
+                  [NowReading]="NowReading"
+                ></boNowReading>
+              </div>
+            </div>
+          </div>
+          <div class="row row-deck row-cards">
+            <div class="col-sm-8">
+              <div class="card">
+                <div class="card-body">
+                  <boHeading
+                    [level]="3"
+                    [cssClass]="'card-title'"
+                    [text]="'This is a table filled with data'"
+                  >
+                </boHeading>
+                  <bookorg-table [rowData]="RowData" [columnDefs]="ColumnDefs"> </bookorg-table>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="card">
+                <div class="card-body">
+                    <boHeading
+                      [level]="3"
+                      [cssClass]="'card-title'"
+                      [text]="'This is a chart filled with data'"
+                    ></boHeading>
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-sm-12">
+                          <bookorg-pie-chart [ChartModel]="ChartData"></bookorg-pie-chart>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+  
+  
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>

@@ -1,9 +1,9 @@
-export class PieChartDataModel{
-    public data: any[];
-    public columns: any[];
+export class TableDataModel{
+    public RowData: any[];
+    public ColumnDefinitons: any[];
 
     public constructor(_data: any[], _columns: any[]){
-        this.data = _data;
-        this.columns = _columns;
+        this.RowData = _data;
+        this.ColumnDefinitons = _columns;
     }
 }

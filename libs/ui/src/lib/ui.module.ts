@@ -1,35 +1,59 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { LabelComponent } from './atoms/label/label.component';
-import { InputTextComponent } from './atoms/input-text/input-text.component';
-import { PieChartComponent } from './molecules/pie-chart/pie-chart.component';
-import { NgxChartsModule } from '@swimlane/ngx-charts';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { HttpClientModule } from "@angular/common/http";
+import { LabelComponent } from "./atoms/label/label.component";
+import { InputTextComponent } from "./atoms/input-text/input-text.component";
+import { PieChartComponent } from "./molecules/pie-chart/pie-chart.component";
+import { NgxChartsModule } from "@swimlane/ngx-charts";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
-import { AgGridModule } from 'ag-grid-angular';
+import { AgGridModule } from "ag-grid-angular";
 
-import { StoreModule } from '@ngrx/store';
-import { EffectsModule } from '@ngrx/effects';
-import * as fromUi from './+state/ui/ui.reducer';
-import { UiEffects } from './+state/ui/ui.effects';
-import { TableComponent } from './molecules/table/table.component';
-import { BrowserModule } from '@angular/platform-browser';
-import { CardComponent } from './molecules/card/card.component';
-import { ImageComponent } from './atoms/image/image.component';
-import { HeaderComponent } from './organisms/header/header.component';
-import { LinkComponent } from './atoms/link/link.component';
+import { TableComponent } from "./molecules/table/table.component";
+import { BrowserModule } from "@angular/platform-browser";
+import { CardComponent } from "./molecules/card/card.component";
+import { ImageComponent } from "./atoms/image/image.component";
+import { HeaderComponent } from "./organisms/header/header.component";
+import { LinkComponent } from "./atoms/link/link.component";
+import { HeadingComponent } from "./atoms/heading/heading.component";
+import { PageTitleComponent } from "./molecules/page-title/page-title.component";
+import { NowReadingComponent } from "./organisms/now-reading/now-reading.component";
+
 
 @NgModule({
   imports: [
     CommonModule,
     BrowserModule,
+    HttpClientModule,
     NgxChartsModule,
     AgGridModule.withComponents([]),
     BrowserAnimationsModule,
-    StoreModule.forFeature(fromUi.UI_FEATURE_KEY, fromUi.reducer),
-    EffectsModule.forFeature([UiEffects]),
   ],
-  declarations: [LabelComponent, InputTextComponent, PieChartComponent, TableComponent, CardComponent, ImageComponent, HeaderComponent, LinkComponent],
-  exports: [LabelComponent, InputTextComponent, PieChartComponent, TableComponent, CardComponent, ImageComponent, HeaderComponent, LinkComponent],
+  declarations: [
+    LabelComponent,
+    InputTextComponent,
+    PieChartComponent,
+    TableComponent,
+    CardComponent,
+    ImageComponent,
+    HeaderComponent,
+    LinkComponent,
+    HeadingComponent,
+    PageTitleComponent,
+    NowReadingComponent
+  ],
+  exports: [
+    LabelComponent,
+    InputTextComponent,
+    PieChartComponent,
+    TableComponent,
+    CardComponent,
+    ImageComponent,
+    HeaderComponent,
+    LinkComponent,
+    HeadingComponent,
+    PageTitleComponent,
+    NowReadingComponent
+  ],
 })
 export class UiModule {}

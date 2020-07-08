@@ -1,14 +1,18 @@
-import { text, withKnobs } from '@storybook/addon-knobs';
+import { storiesOf, moduleMetadata } from "@storybook/angular";
 import { LabelComponent } from './label.component';
+import { withKnobs, text } from '@storybook/addon-knobs';
 
-export default {
-  title: 'A T O M S|label',
-  decorators: [withKnobs]
-}
-
-export const Primary = () => ({
-  component: LabelComponent,
-  props: {
-    text: text('text', 'Input Label')
-  }
-})
+storiesOf('Atoms|label', module)
+.addDecorator( 
+    moduleMetadata({
+        declarations: [LabelComponent]
+    })
+)
+.addDecorator(withKnobs)
+.add('Primary', () => ({
+        template: `<input-label>{{text}}</input-label>`,
+        props: {
+            text: text('text', 'Input Label') 
+        }
+    })
+)

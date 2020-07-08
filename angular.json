@@ -178,6 +178,68 @@
         }
       },
       "schematics": {}
+    },
+    "wrapper": {
+      "projectType": "library",
+      "root": "libs/wrapper",
+      "sourceRoot": "libs/wrapper/src",
+      "prefix": "bookorg",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/wrapper/tsconfig.lib.json",
+              "libs/wrapper/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/wrapper/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/wrapper/jest.config.js",
+            "tsConfig": "libs/wrapper/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/wrapper/src/test-setup.ts"
+          }
+        },
+        "storybook": {
+          "builder": "@nrwl/storybook:storybook",
+          "options": {
+            "uiFramework": "@storybook/angular",
+            "port": 4400,
+            "config": {
+              "configFolder": "libs/wrapper/.storybook"
+            }
+          },
+          "configurations": {
+            "ci": {
+              "quiet": true
+            }
+          }
+        },
+        "build-storybook": {
+          "builder": "@nrwl/storybook:build",
+          "options": {
+            "uiFramework": "@storybook/angular",
+            "outputPath": "dist/storybook/wrapper",
+            "config": {
+              "configFolder": "libs/wrapper/.storybook"
+            }
+          },
+          "configurations": {
+            "ci": {
+              "quiet": true
+            }
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
     }
   },
   "cli": {

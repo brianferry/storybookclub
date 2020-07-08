@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: angular-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels: 
+      app: angular-frontend
+      tier: frontend
+  template:
+    metadata:
+      labels:
+        app: angular-frontend
+        tier: frontend
+    spec:
+      containers:
+      - image: registry.gitlab.com/brianferry/kube-fe:my-web-app0.0.2
+        name: angular-frontend
+        env:
+          - name: API_URL
+            value: "10.108.254.57"
+          # - name: WebAPIPort
+          #   value: "5000"
+        ports:
+        - containerPort: 80

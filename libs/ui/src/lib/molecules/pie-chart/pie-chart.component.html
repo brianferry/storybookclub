@@ -1,7 +1,6 @@
 <ngx-charts-pie-chart
-    [scheme]="_colorScheme"
-    [results]="chartData$ | async"
-    [labels]="showLabels"
+    [scheme]="ChartModel ? ChartModel.colorScheme : _calculatedColorScheme"
+    [results]="ChartModel ? ChartModel.data : []"
+    [labels]="true"
 >
-
 </ngx-charts-pie-chart>

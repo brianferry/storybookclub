@@ -11,6 +11,7 @@ export class InputTextComponent implements OnInit {
   @Input() rounded: boolean = false;
   @Input() disabled: boolean = false;
   @Input() password: boolean = false;
+  @Input() linkClass: string = "";
 
   constructor() { }
 

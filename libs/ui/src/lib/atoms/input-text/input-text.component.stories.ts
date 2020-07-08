@@ -2,7 +2,7 @@ import { boolean, number, text, withKnobs } from '@storybook/addon-knobs';
 import { InputTextComponent } from './input-text.component';
 
 export default {
-  title: 'A T O M S|input',
+  title: 'Atoms|input',
   decorators: [withKnobs]
 }
 

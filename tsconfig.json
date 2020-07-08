@@ -16,7 +16,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@bookorg/ui": ["libs/ui/src/index.ts"]
+      "@bookorg/ui": ["libs/ui/src/index.ts"],
+      "@bookorg/wrapper": ["libs/wrapper/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
